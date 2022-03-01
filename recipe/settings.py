@@ -25,19 +25,19 @@ SECRET_KEY = 'django-insecure-ncckfb^%d=zr0-5zo3l*t!r=(y_*m#(!%x&)ezsr=w(c(m!p*y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['recipe.ddns.net']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'recipe',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'recipe',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'myfile.urls'
+ROOT_URLCONF = 'recipe.urls'
 
 import os
 
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'myfile.wsgi.application'
+WSGI_APPLICATION = 'recipe.wsgi.application'
 
 
 # Database
