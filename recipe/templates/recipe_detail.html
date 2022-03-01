@@ -1,0 +1,25 @@
+
+
+{% extends "base.html" %}
+{% block page_title %}Recipe{% endblock %}
+{% load static %}
+
+{% block page_content %}
+
+<main role="main" class="container">
+
+<div class="row">
+    <div class="col-md-8">
+        <img src="{% static rp.image %}" alt="" width="100%">
+    </div>
+    <div class="col-md-4">
+        <h2>{{ rp.title }}</h2>
+        <h5>About the recipe:</h5>
+        <p>{{ rp.description }}</p>
+        <br>
+        <h5>steps:</h5>
+        <p>{{ rp.steps }}</p>
+    </div>
+</div>
+    </main>
+{% endblock %}

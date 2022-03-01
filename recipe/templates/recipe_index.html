@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block page_title %}Recipe{% endblock %}
+{% load static %}
+{% block page_content %}
+
+<main role="main" class="container">
+    <h1>Recipes</h1>
+    <div class="jumbotron">
+        <div class="row">
+        {% for rp in rps %}
+            <div class="col-md-4">
+                <div class="card mb-2">
+                    <img class="card-img-top" src="{% static rp.image %}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ rp.title }}</h5>
+                        <p class="card-text">{{ rp.description }}</p>
+                        <a href="{% url 'recipe_detail' rp.pk %}"
+                           class="btn btn-primary">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}
